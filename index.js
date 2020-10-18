@@ -65,7 +65,6 @@ export default class AnimationFlatlist extends React.Component {
   }
 
   renderItem = ({ item, index }) => {
-    // console.log(this.state.scrollX);
     var ITEM_SIZE = this.props.width
     let translateY = this.state.scrollX.interpolate({
       inputRange: [(index - 1) * ITEM_SIZE,
@@ -88,7 +87,7 @@ export default class AnimationFlatlist extends React.Component {
         <Animated.View style={{ flex: 1, backgroundColor: '#eeeeee', transform: [{ translateX: changeImageX }] }}>
           <ImageBackground resizeMode={'center'} style={{ flex: 1, width: '100%', borderRadius: 6 }} source={require('./images/placeholder.png')}>
 
-            <Animated.Image style={{ flex: 1, width: '100%', borderRadius: 6 }} source={{ uri: item.image }} />
+            <Animated.Image style={{ flex: 1, width: '100%', borderRadius: 6 }} source={{ uri: item.url }} />
           </ImageBackground>
         </Animated.View>
         <View style={{ position: 'absolute', bottom: 20, justifyContent: 'center', right: 0, left: 0, paddingHorizontal: 30, height: 120 }}>
